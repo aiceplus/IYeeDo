@@ -5,9 +5,9 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<package name="Hello_World_Struts2" extends="struts-default">
-		<action name="index">
-			<result>/index.jsp</result>
-		</action>
+<!-- 		<action name="index"> -->
+<!-- 			<result>/index.jsp</result> -->
+<!-- 		</action> -->
 		<!-- <action name="hello" -->
 		<!-- class="com.acie.struct2Demo.Test" method="execute"> -->
 		<!-- <result name="success">/HelloWorld.jsp</result> -->
@@ -16,5 +16,11 @@
 		<!-- <action name="add" class="addBean" method="add"> -->
 		<!-- <result name="success">/index.jsp</result> -->
 		<!-- </action> -->
+		<action name="addUser" class="addUserBean" method="addUser">
+			<result>/index.jsp</result>
+		</action>
+		<action name="login" class="loginBean" method="login">
+			<result>/index.jsp</result>
+		</action>
 	</package>
 </struts>

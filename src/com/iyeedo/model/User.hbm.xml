@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.iyeedo.model" >
+	<class name="User" table="USER_TB" lazy="false">
+		<id name="id"></id>
+		<property name="userName" type="java.lang.String">
+			<column name="username" />
+		</property>
+		<property name="nickName" type="java.lang.String">
+			<column name="nickName" /> 
+		</property>
+		<property name="trueName" type="java.lang.String">
+			<column name="truename" /> 
+		</property>
+		<property name="psw" type="java.lang.String">
+			<column name="psw" /> 
+		</property>
+		<property name="sex" type="java.lang.Byte">
+			<column name="sex" /> 
+		</property>
+		<property name="country" type="java.lang.String">
+			<column name="country" /> 
+		</property>
+		<property name="province" type="java.lang.String">
+			<column name="province" /> 
+		</property>
+		<property name="city" type="java.lang.String">
+			<column name="city" /> 
+		</property>
+		<property name="region" type="java.lang.String">
+			<column name="region" /> 
+		</property>
+		<property name="mobile" type="java.lang.String">
+			<column name="mobile" /> 
+		</property>
+		<property name="IDCard1" type="java.lang.String">
+			<column name="idcard1" /> 
+		</property>
+		<property name="IDCard2" type="java.lang.String">
+			<column name="idcard2" /> 
+		</property>
+		<property name="IDCard3" type="java.lang.String">
+			<column name="idcard3" /> 
+		</property>
+		<property name="birthday" type="java.lang.String">
+			<column name="birthday" /> 
+		</property>
+		<property name="createTime" type="java.lang.String">
+			<column name="createtime" /> 
+		</property>
+		<property name="updateTime" type="java.lang.String">
+			<column name="updatetime" /> 
+		</property>
+		<property name="userStatus" type="java.lang.Byte">
+			<column name="userstatus" /> 
+		</property>
+		<property name="type" type="java.lang.Byte">
+			<column name="type" /> 
+		</property>
+		<property name="gold" type="java.lang.Float">
+			<column name="gold" /> 
+		</property>
+	</class>
+</hibernate-mapping>
