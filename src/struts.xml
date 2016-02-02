@@ -16,11 +16,16 @@
 		<!-- <action name="add" class="addBean" method="add"> -->
 		<!-- <result name="success">/index.jsp</result> -->
 		<!-- </action> -->
-		<action name="addUser" class="addUserBean" method="addUser">
+		<action name="regist" class="registBean" method="regist">
 			<result>/index.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		<action name="login" class="loginBean" method="login">
 			<result>/index.jsp</result>
+		</action>
+		<action name="logout" class="logoutBean" method="logout">
+			<result>/index.jsp</result>
+			<result name="error">/error.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -18,14 +18,7 @@
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 <body>
-	<form action="addUser" method="post">
-		<s:textfield name="user.userName" label="用户名" /><br />
-		<s:textfield name="user.nickName" label="昵称" /><br />
-		<s:textfield name="user.trueName" label="真实姓名" /><br />
-		<s:textfield name="user.psw" label="密码" /><br />
-<%-- 		<s:textfield name="user.userStatus" label="用户状态" /><br /> --%>
-<%-- 		<s:textfield name="user.type" label="账号类型" /><br /> --%>
-		<input type="submit" value="注册" />
-	</form>
+	<h1>这里是错误页面</h1>
+	<a href="index.jsp">回到首页</a>
 </body>
 </html>

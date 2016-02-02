@@ -13,7 +13,9 @@ public class PrintClass {
 	 *            ´òÓ¡×Ö·û´®
 	 * */
 	public static void Print(String str) {
+		StackTraceElement te = ((new Exception()).getStackTrace())[1];
 		out.println("printStr-->" + str);
+		out.println("call by:" + te.getClassName() + "|**|" + te.getMethodName() + "|**|" + te.getLineNumber());
 	}
 
 	/**

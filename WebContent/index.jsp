@@ -25,11 +25,12 @@
 %>
 <body onload="getUserName()">
 	<h1>this is index.jsp page</h1>
-	<a href="login.jsp">登陆</a>
-	<a href="#">注册</a>
-	
+	<a href="login.jsp">登陆</a> &nbsp;
+	<a href="regist.jsp">注册</a> &nbsp;
+	<a href="logout">退出登陆</a> &nbsp;
 	<h1>当前登录用户为:${userName}</h1>
 	<h1>session 取得 <%= userName %></h1>
+	<a href="profile.jsp">个人资料</a>
 </body>
 
 </html>

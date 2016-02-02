@@ -43,11 +43,15 @@
 		<property name="userDao" ref="userDao" />
 	</bean>
 
-	<bean id="addUserBean" class="com.iyeedo.action.UserAction" scope="prototype">
+	<bean id="registBean" class="com.iyeedo.action.UserAction">
 		<property name="userManager" ref="userManager" />
 	</bean>
 	
 	<bean id="loginBean" class="com.iyeedo.action.UserAction">
+		<property name="userManager" ref="userManager" />
+	</bean>
+	
+	<bean id="logoutBean" class="com.iyeedo.action.UserAction">
 		<property name="userManager" ref="userManager" />
 	</bean>
 	<!-- <bean id="userDao" class="com.aice.sshDemo.UserDAOImpl"> -->
