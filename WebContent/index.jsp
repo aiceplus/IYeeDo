@@ -11,8 +11,7 @@
 <head>
 <%@ page language="java" import="com.iyeedo.model.*" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="icon" href="res/image/logo.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="res/image/logo.ico" type="image/x-icon" />
+<%@taglib prefix="s" uri="/struts-tags" %>
 <title>Insert title here</title>
 </head>
 <% 
