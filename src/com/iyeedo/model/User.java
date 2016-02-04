@@ -1,46 +1,51 @@
 package com.iyeedo.model;
 
+import com.iyeedo.test.PrintClass;
+
 public class User {
-	private String birthday;
+	public String birthday;
 
-	private String city;
+	public String city;
 
-	private String country;
+	public String country;
 
-	private String createTime;
+	public String createTime;
 
-	private float gold;
+	public float gold;
 
-	private int id;
-	
+	public int id;
 
-	private String IDCard1;
+	public String IDCard1;
 
-	private String IDCard2;
+	public String IDCard2;
 
-	private String IDCard3;
+	public String IDCard3;
 
-	private String mobile;
+	public String mobile;
 
-	private String nickName;
+	public String nickName;
 
-	private String province;
+	public String province;
 
-	private String psw;
+	public String psw;
 
-	private String region;
+	public String region;
 
-	private Byte sex;
+	public Byte sex;
 
-	private String trueName;
+	public String trueName;
 
-	private Byte type;
+	public Byte type;
 
-	private String updateTime;
+	public String updateTime;
 
-	private String userName;
+	public String userName;
 
-	private Byte userStatus;
+	public Byte userStatus;
+
+	public User() {
+		PrintClass.Print("construct");
+	}
 
 	public String getBirthday() {
 		return birthday;
@@ -129,57 +134,75 @@ public class User {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 	}
+
 	public void setGold(float gold) {
 		this.gold = gold;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public void setIDCard1(String iDCard1) {
 		IDCard1 = iDCard1;
 	}
+
 	public void setIDCard2(String iDCard2) {
 		IDCard2 = iDCard2;
 	}
+
 	public void setIDCard3(String iDCard3) {
 		IDCard3 = iDCard3;
 	}
+
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
+
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
+
 	public void setProvince(String province) {
 		this.province = province;
 	}
+
 	public void setPsw(String psw) {
 		this.psw = psw;
 	}
+
 	public void setRegion(String region) {
 		this.region = region;
 	}
+
 	public void setSex(byte sex) {
 		this.sex = sex;
 	}
+
 	public void setTrueName(String trueName) {
 		this.trueName = trueName;
 	}
+
 	public void setType(byte type) {
 		this.type = type;
 	}
+
 	public void setUpdateTime(String updateTime) {
 		this.updateTime = updateTime;
 	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 	public void setUserStatus(byte userStatus) {
 		this.userStatus = userStatus;
 	}

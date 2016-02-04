@@ -1,5 +1,7 @@
 package com.iyeedo.action;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
@@ -13,7 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
 	private int id;
-	private User user;
+	public User user;
 	private UserManager userManager;
 	private String userName;
 	private String psw;
@@ -22,7 +24,14 @@ public class UserAction extends ActionSupport {
 
 	private void initContext() {
 		actionContext = ActionContext.getContext();
+		
 		httpServletRequest = (HttpServletRequest) actionContext.get(ServletActionContext.HTTP_REQUEST);
+		try {
+			httpServletRequest.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			System.out.println("httpServletRequest.setCharacterEncodingï¿½ì³£ï¿½ï¿½");
+			e.printStackTrace();
+		}
 	}
 
 	public String getUserName() {
@@ -72,8 +81,8 @@ public class UserAction extends ActionSupport {
 
 	public String regist() {
 		if (this.userManager.getUserByUserName(user.getUserName()) > 0) {
-			/** ÓÃ»§ÃûÒÑ´æÔÚ */
-			PrintClass.Print("ÓÃ»§ÃûÒÑ´æÔÚ");
+			/** ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½ */
+			PrintClass.Print("ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½");
 			return ERROR;
 		} else {
 			this.userManager.SaveOrUpdateUser(user, SaveOrUpdate.SAVE);
@@ -82,20 +91,21 @@ public class UserAction extends ActionSupport {
 	}
 
 	public String update() {
+		initContext();
 		this.userManager.SaveOrUpdateUser(user, SaveOrUpdate.UPDATE);
 		return SUCCESS;
 	}
 
 	public String login() {
+		initContext();
 		User loginUser = this.userManager.getUserByLogin(userName.trim(), psw);
 		if (loginUser != null) {
-			PrintClass.Print("ÓÃ»§:" + userName + "µÇÂ¼³É¹¦£¡");
-			initContext();
+			PrintClass.Print("ï¿½Ã»ï¿½:" + userName + "ï¿½ï¿½Â¼ï¿½É¹ï¿½ï¿½ï¿½");
 			if (httpServletRequest != null)
 				httpServletRequest.getSession().setAttribute("user", loginUser);
 			return SUCCESS;
 		} else {
-			PrintClass.Print("µÇÂ¼Ê§°Ü£¡");
+			PrintClass.Print("ï¿½ï¿½Â¼Ê§ï¿½Ü£ï¿½");
 			return ERROR;
 		}
 	}

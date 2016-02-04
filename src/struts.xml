@@ -4,6 +4,7 @@
 
 <struts>
 	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
 	<package name="Hello_World_Struts2" extends="struts-default">
 <!-- 		<action name="index"> -->
 <!-- 			<result>/index.jsp</result> -->
@@ -24,6 +25,11 @@
 			<result>/index.jsp</result>
 		</action>
 		<action name="logout" class="logoutBean" method="logout">
+			<result>/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="update" class="updateBean" method="update">
 			<result>/index.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>

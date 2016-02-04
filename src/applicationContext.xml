@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"    
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
-    xmlns:p="http://www.springframework.org/schema/p"  
-    xmlns:aop="http://www.springframework.org/schema/aop"   
-    xmlns:context="http://www.springframework.org/schema/context"  
-    xmlns:jee="http://www.springframework.org/schema/jee"  
-    xmlns:tx="http://www.springframework.org/schema/tx"  
-    xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd  
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd  
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd  
         http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd  
-        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">  
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 	<!-- <bean class = "com.aice.demo.NorthMan" id= "northMan" ></bean> -->
 	<!-- <bean class = "com.aice.demo.SouthMan" id= "southMan" ></bean> -->
 
-<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
-<!-- 		<property name="driverClassName" value="com.mysql.jdbc.Driver" /> -->
-<!-- 		<property name="url" value="jdbc:mysql://localhost:3306/iyeedo_db"/> -->
-<!-- 		<property name="username" value="root" /> -->
-<!-- 		<property name="password" value="000000" /> -->
-<!-- 	</bean> -->
-	 <!-- session工厂 -->  
-    <bean id="sessionFactory"  
-        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  
-<!--         <property name="dataSource">   -->
-<!--             <ref bean="dataSource" />   -->
-<!--         </property>   -->
-        <property name="configLocation" value="classpath:hibernate.cfg.xml"/>  
-        <!-- 自动扫描注解方式配置的hibernate类文件 -->  
-<!--         <property name="mappingResources">   -->
-<!--             <list>   -->
-<!--                 <value>com/iyeedo/model/User.hbm.xml</value>   -->
-<!--             </list>   -->
-<!--         </property>   -->
-    </bean>  
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
+	<!-- <property name="driverClassName" value="com.mysql.jdbc.Driver" /> -->
+	<!-- <property name="url" value="jdbc:mysql://localhost:3306/iyeedo_db"/> -->
+	<!-- <property name="username" value="root" /> -->
+	<!-- <property name="password" value="000000" /> -->
+	<!-- </bean> -->
+	<!-- session工厂 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+	<!-- Default ViewResolver -->
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!-- <property name="dataSource"> -->
+		<!-- <ref bean="dataSource" /> -->
+		<!-- </property> -->
+		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
+		<!-- 自动扫描注解方式配置的hibernate类文件 -->
+		<!-- <property name="mappingResources"> -->
+		<!-- <list> -->
+		<!-- <value>com/iyeedo/model/User.hbm.xml</value> -->
+		<!-- </list> -->
+		<!-- </property> -->
+	</bean>
 
 	<bean id="userDao" class="com.iyeedo.dao.impl.UserDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
@@ -46,12 +44,16 @@
 	<bean id="registBean" class="com.iyeedo.action.UserAction">
 		<property name="userManager" ref="userManager" />
 	</bean>
-	
+
 	<bean id="loginBean" class="com.iyeedo.action.UserAction">
 		<property name="userManager" ref="userManager" />
 	</bean>
-	
+
 	<bean id="logoutBean" class="com.iyeedo.action.UserAction">
+		<property name="userManager" ref="userManager" />
+	</bean>
+
+	<bean id="updateBean" class="com.iyeedo.action.UserAction">
 		<property name="userManager" ref="userManager" />
 	</bean>
 	<!-- <bean id="userDao" class="com.aice.sshDemo.UserDAOImpl"> -->
